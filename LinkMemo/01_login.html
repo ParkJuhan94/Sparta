@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 페이지</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Jua', sans-serif;
+
+        }
+        .mytitle {
+            background-color: green;
+
+            width: 300px;
+            height: 200px;
+
+            color: white;
+
+            text-align: center;
+
+            /*  밑의 세 줄을 set 로 항상 붙어 다닌다.    */
+
+            background-image: url("https://www.ancient-origins.net/sites/default/files/field/image/Agesilaus-II-cover.jpg");
+            background-size: cover;
+            background-position: center;
+
+            border-radius: 10px;
+
+            padding-top: 20px;
+        }
+
+        .wrap {
+            /*  background-color: green;
+                항상 div를 쓸때는 배경색 입혀서 구조를 확인!!
+            */
+            width: 300px;
+            margin: auto;   /*  auto: 좌우 여백을 최대로  */
+        }
+
+        .mybtn {
+            width: 100px;
+            margin: auto;   /*  이렇게만 하면 버튼이 가운데 정렬이 안 돼 */
+            display: block; /*  글 속성을 박스 속성으로 강제로 바꿔주면 가운데 정렬이 돼. 왜냐하면 글은 가로세로 개념이 없으니까 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="mytitle">
+            <h1>로그인 페이지</h1>
+            <h5>아이디, 패스워드를 입력해주세요</h5>
+        </div>
+
+        <p>ID: <input type="text"></p>
+        <p>PW: <input type="text"></p>
+        <button class="mybtn">로그인하기</button>
+    </div>
+</body>
+</html>
