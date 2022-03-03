@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            q1();
+        });
+
+        function q1() {
+            $.ajax({
+                type: "GET",
+                url: "http://spartacodingclub.shop/sparta_api/rate",
+                data: {},
+                success: function (response) {
+                    let now_rate = response['rate'];
+                    $('#now-rate').text(now_rate);
+                }
+            })
+        }
+    </script>
+    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
+    <style>
+        * {
+            font-family: 'Jua', sans-serif;
+        }
+
+        .wrapper {
+            background-image: url("");
+            width: 500px;
+            margin: auto;
+            padding-top: 100px;
+        }
+
+        .bikeimg {
+            width: 500px;
+        }
+
+        .price {
+            font-size: 20px;
+            color: blue;
+        }
+
+        .mybtn {
+            margin: auto;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+<div class="wrapper">
+    <img class="bikeimg"
+         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7Z4wQEe0wxDIzJ00YdD89ndZx_mc_Pq9W5Q&usqp=CAU">
+    <h2>MT-07 2020년식 판매합니다.</h2>
+    <span class="price">가격: 10,900,000원/개</span>
+    <p>야마하의 심장. 네이크드의 주축을 담당하고 있는 효자 Model</p>
+    <p class="rate">달러-원 환율: <span id="now-rate">1219.15</span></p>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">수량</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01">
+            <option selected>-- 수량을 선택하세요 --</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+    </div>
+    <div class="input-group mb-2">
+        <div class="input-group-text">주문자 이름</div>
+        <input type="text" class="form-control">
+    </div>
+    <div class="input-group mb-2">
+        <div class="input-group-text">주소</div>
+        <input type="text" class="form-control">
+    </div>
+    <div class="input-group mb-2">
+        <div class="input-group-text">전화번호</div>
+        <input type="text" class="form-control">
+    </div>
+    <button type="button" class="btn btn-primary mybtn">주문하기</button>
+</div>
+
+</body>
+
+</html>
