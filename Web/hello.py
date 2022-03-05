@@ -21,13 +21,20 @@ soup = BeautifulSoup(data.text, 'html.parser')
 
 # 코딩 시작
 #old_content > table > tbody > tr:nth-child(2) >
-
+#old_content > table > tbody > tr:nth-child(2) > td:nth-child(1) > img
+#old_content > table > tbody > tr:nth-child(2) > td.point
 trs = soup.select('#old_content > table > tbody > tr')
 
 for tr in trs:
+    img_tag = tr.select_one('td > img')
     a_tag = tr.select_one('td.title > div > a')
+    rank_tag = tr.select_one('td.point')
+
     if a_tag is not None:
         title = a_tag.text
-        print(title)
+        img = img_tag['alt']
+        rank = rank_tag.text
+
+        print(img, title, rank)
 
 
