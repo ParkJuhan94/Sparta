@@ -20,6 +20,8 @@ data = requests.get('https://movie.naver.com/movie/sdb/rank/rmovie.nhn?sel=pnt&d
 soup = BeautifulSoup(data.text, 'html.parser')
 
 # 코딩 시작
+# headers는 실제 웹사이트에서의 enter
+# soup로 html에서 원하는 정보 솎아내기 
 
 title = soup.select_one('#old_content > table > tbody > tr:nth-child(2) > td.title > div > a')
 
