@@ -1,0 +1,9 @@
+from pymongo import MongoClient
+client = MongoClient('localhost', 27017)
+db = client.dbsparta
+
+# 코딩 시작
+
+# 하나 삽입하기
+doc = {'name':'john','age':27}
+db.users.insert_one(doc)
