@@ -4,6 +4,25 @@ db = client.dbsparta
 
 # 코딩 시작
 
-# 하나 삽입하기
-doc = {'name':'john','age':27}
-db.users.insert_one(doc)
+# insert
+# doc = {'name':'jinsoo','age':21}
+# db.users.insert_one(doc)
+
+# find
+# same_ages = list(db.users.find({'age':21},{'_id':False}))   # {'age'}:21   -> 조건
+# same_ages = list(db.users.find({},{'_id':False}))   : 조건 없애면 모든 행 출력. 거의 이렇게 씀.
+# for person in same_ages:
+#   print(person)
+
+# find_one
+# user = db.users.find_one({'name':'bobby'}, {'_id': False})
+# print(user['age'])
+
+# update_one
+db.users.update_one({'name':'bobby'},{'$set':{'age':19}})
+# update_many #  bobby를 모두 찾아서 age를 19로 update
+# db.users.update_many({'name':'bobby'},{'$set':{'age':19}})
+
+# delete_one
+db.users.delete_one({'name':'bobby'})
+# delete_many도 있음. 위험해서 잘 안 씀.
